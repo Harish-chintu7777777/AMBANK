@@ -1,0 +1,47 @@
+* ============================================================
+* NAME     : AMTX001
+* TYPE     : Parameter Data Area (PDA)
+* LIBRARY  : AMBNATLIB
+* PURPOSE  : Transaction PDA for TXNWRT001
+*           Contains input/output parameters for transaction operations
+* ============================================================
+DEFINE DATA PARAMETER
+1 #P-ACCOUNT-NUMBER     (A12)
+1 #P-CUSTOMER-ID         (A12)
+1 #P-TRANSACTION-ID     (A12)
+1 #P-TRANSACTION-AMOUNT (P15.2)
+1 #P-TRANSACTION-TYPE   (A3)   /* DEP, WTH, TRF, INT, CHG
+1 #P-CURRENCY-CODE      (A3)
+1 #P-REFERENCE-NUMBER  (A40)
+1 #P-DESCRIPTION        (A100)
+1 #P-CHANNEL-CODE       (A12)
+1 #P-USER-ID            (A8)
+1 #P-TERMINAL-ID        (A40)
+1 #P-RESPONSE-CODE      (N4)
+1 #P-RESPONSE-TEXT      (A50)
+1 #P-ADABAS-RESPONSE    (N4)
+1 #SYS-LAST-ADABAS-RESPONSE (N4)
+1 #SYS-LAST-ERROR-PROGRAM (A8)
+1 #P-ACCOUNT-RECORD
+  2 #P-ACCOUNT-NUMBER     (A12)
+  2 #P-CUSTOMER-ID         (A12)
+  2 #P-PRODUCT-CODE        (A8)
+  2 #P-ACCOUNT-TYPE        (A2)
+  2 #P-ACCOUNT-STATUS      (A3)
+  2 #P-DATE-OPENED         (A8)
+  2 #P-DATE-CLOSED         (A8)
+  2 #P-CURRENCY-CODE       (A3)
+  2 #P-CURRENT-BALANCE     (P15.2)
+  2 #P-AVAILABLE-BALANCE   (P15.2)
+  2 #P-CLEARED-BALANCE     (P15.2)
+  2 #P-UNCLEARED-BALANCE   (P15.2)
+  2 #P-OVERDRAFT-LIMIT     (P15.2)
+  2 #P-LIEN-AMOUNT         (P15.2)
+  2 #P-INTEREST-RATE-CODE  (A3)
+  2 #P-CHARGE-SCHEDULE-CODE (A3)
+  2 #P-STATEMENT-CYCLE     (A2)
+  2 #P-BRANCH-CODE         (A4)
+  2 #P-RELATIONSHIP-MGR-ID (A8)
+  2 #P-LAST-TRANSACTION-DATE (A8)
+  2 #P-LAST-STATEMENT-DATE (A8)
+END-DEFINE

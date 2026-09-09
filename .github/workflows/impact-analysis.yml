@@ -1,0 +1,31 @@
+name: AMBANK Impact Analysis
+
+on:
+  push:
+    branches: [ qa, prod ]
+  pull_request:
+    branches: [ prod ]
+
+jobs:
+  impact-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Trigger Impact Analysis
+        run: |
+          echo "Triggering impact analysis for AMBANK"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          
+          # Add impact analysis API call here
+          # curl -X POST https://your-impact-analysis-service/api/v1/compare \
+          #   -H "Content-Type: application/json" \
+          #   -d '{
+          #     "prod_branch": "prod",
+          #     "dev_branch": "${{ github.ref_name }}",
+          #     "repository": "AMBANK"
+          #   }'

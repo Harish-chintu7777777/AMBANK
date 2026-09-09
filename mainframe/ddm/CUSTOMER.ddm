@@ -1,0 +1,57 @@
+* ============================================================
+* DDM NAME  : AMB-COREBKG-CUSTOMER
+* ADABAS    : FILE 200
+* PURPOSE   : Customer master for AMBANK core banking operations
+* USED BY   : CUSTRD001 (Natural) - customer read operations
+*            CUSTUP001 (Natural) - customer update operations
+* RECORDS   : ~50,000 (demo data)
+* CHANGED   : 2024-09-08 Initial creation for impact analysis demo
+* ============================================================
+
+DB=200
+
+FIELD=CA, 12, A, DE         /* CUSTOMER-ID
+                              /* Unique descriptor. Customer identifier.
+                              /* Format: C followed by 11-digit number.
+
+FIELD=CB, 40, A, DE         /* CUSTOMER-NAME
+                              /* Customer full name.
+
+FIELD=CC, 30, A, DE         /* CUSTOMER-ADDRESS
+                              /* Customer residential address.
+
+FIELD=CD, 12, A, DE         /* PHONE-NUMBER
+                              /* Customer contact phone number.
+
+FIELD=CE, 50, A, DE         /* EMAIL-ADDRESS
+                              /* Customer email address.
+
+FIELD=CF, 10, A, DE         /* DATE-OF-BIRTH
+                              /* Customer date of birth in YYYYMMDD format.
+
+FIELD=CG, 1, A, DE          /* GENDER
+                              /* Gender: M, F, O
+
+FIELD=CH, 1, A, DE          /* MARITAL-STATUS
+                              /* Marital status: S, M, D, W
+
+FIELD=CI, 3, A, DE          /* CUSTOMER-TYPE
+                              /* Customer type: IND, COR, GOV, INS
+
+FIELD=CJ, 10, A, DE         /* KYC-STATUS
+                              /* KYC status: VER, PND, REJ
+
+FIELD=CK, 8, A, DE          /* KYC-DATE
+                              /* KYC verification date in YYYYMMDD format.
+
+FIELD=CL, 3, A, DE          /* CUSTOMER-SEGMENT
+                              /* Customer segment: PRE, MAS, AFF, PRI
+
+FIELD=CM, 3, A, DE          /* RISK-LEVEL
+                              /* Risk level: LOW, MED, HIG
+
+FIELD=CN, 8, A, DE          /* REGISTRATION-DATE
+                              /* Customer registration date in YYYYMMDD format.
+
+FIELD=CO, 8, A, DE          /* LAST-UPDATE-DATE
+                              /* Last customer update date in YYYYMMDD format.

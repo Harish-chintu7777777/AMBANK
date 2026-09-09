@@ -1,0 +1,65 @@
+* ============================================================
+* DDM NAME  : AMB-COREBKG-TRANSACTION
+* ADABAS    : FILE 300
+* PURPOSE   : Transaction master for AMBANK core banking operations
+* USED BY   : TXNRD001 (Natural) - transaction read operations
+*            TXNWRT001 (Natural) - transaction write operations
+* RECORDS   : ~500,000 (demo data)
+* CHANGED   : 2024-09-08 Initial creation for impact analysis demo
+* ============================================================
+
+DB=300
+
+FIELD=TA, 12, A, DE         /* TRANSACTION-ID
+                              /* Unique descriptor. Transaction identifier.
+                              /* Format: T followed by 11-digit number.
+
+FIELD=TB, 12, A, DE         /* ACCOUNT-NUMBER
+                              /* Descriptor. -> FILE 100 AA.
+                              /* Links transaction to account.
+
+FIELD=TC, 12, A, DE         /* CUSTOMER-ID
+                              /* Descriptor. -> FILE 200 CA.
+                              /* Links transaction to customer.
+
+FIELD=TD, 8, A, DE          /* TRANSACTION-DATE
+                              /* Transaction date in YYYYMMDD format.
+
+FIELD=TE, 6, A, DE          /* TRANSACTION-TIME
+                              /* Transaction time in HHMMSS format.
+
+FIELD=TF, 3, A, DE          /* TRANSACTION-TYPE
+                              /* Transaction type: DEP, WTH, TRF, INT, CHG
+
+FIELD=TG, 3, A, DE          /* TRANSACTION-STATUS
+                              /* Transaction status: PEN, COM, REJ, CAN
+
+FIELD=TH, 15, P, DE         /* TRANSACTION-AMOUNT
+                              /* Transaction amount. Signed packed 15.2.
+
+FIELD=TI, 15, P, DE         /* BALANCE-AFTER
+                              /* Account balance after transaction. Packed 15.2.
+
+FIELD=TJ, 3, A, DE          /* CURRENCY-CODE
+                              /* Currency: USD, EUR, GBP, INR, JPY
+
+FIELD=TK, 40, A, DE         /* REFERENCE-NUMBER
+                              /* Reference number for external tracking.
+
+FIELD=TL, 100, A, DE        /* DESCRIPTION
+                              /* Transaction description.
+
+FIELD=TM, 8, A, DE          /* POSTING-DATE
+                              /* Posting date in YYYYMMDD format.
+
+FIELD=TN, 8, A, DE          /* VALUE-DATE
+                              /* Value date in YYYYMMDD format.
+
+FIELD=TO, 12, A, DE         /* CHANNEL-CODE
+                              /* Channel code: ATM, BRN, NET, MOB, POS
+
+FIELD=TP, 8, A, DE          /* USER-ID
+                              /* User ID who performed the transaction.
+
+FIELD=TQ, 40, A, DE         /* TERMINAL-ID
+                              /* Terminal ID where transaction originated.

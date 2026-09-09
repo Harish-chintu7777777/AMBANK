@@ -1,0 +1,38 @@
+* ============================================================
+* NAME     : AMCA001
+* TYPE     : Parameter Data Area (PDA)
+* LIBRARY  : AMBNATLIB
+* PURPOSE  : Account Read/Update PDA for ACCTRD001 and ACCTUP001
+*           Contains input/output parameters for account operations
+* ============================================================
+DEFINE DATA PARAMETER
+1 #P-ACCOUNT-NUMBER     (A12)
+1 #P-LOCK-MODE          (A1)   /* R = Read, H = Hold
+1 #P-RESPONSE-CODE      (N4)
+1 #P-RESPONSE-TEXT      (A50)
+1 #P-ADABAS-RESPONSE    (N4)
+1 #SYS-LAST-ADABAS-RESPONSE (N4)
+1 #SYS-LAST-ERROR-PROGRAM (A8)
+1 #P-ACCOUNT-RECORD
+  2 #P-ACCOUNT-NUMBER     (A12)
+  2 #P-CUSTOMER-ID         (A12)
+  2 #P-PRODUCT-CODE        (A8)
+  2 #P-ACCOUNT-TYPE        (A2)
+  2 #P-ACCOUNT-STATUS      (A3)
+  2 #P-DATE-OPENED         (A8)
+  2 #P-DATE-CLOSED         (A8)
+  2 #P-CURRENCY-CODE       (A3)
+  2 #P-CURRENT-BALANCE     (P15.2)
+  2 #P-AVAILABLE-BALANCE   (P15.2)
+  2 #P-CLEARED-BALANCE     (P15.2)
+  2 #P-UNCLEARED-BALANCE   (P15.2)
+  2 #P-OVERDRAFT-LIMIT     (P15.2)
+  2 #P-LIEN-AMOUNT         (P15.2)
+  2 #P-INTEREST-RATE-CODE  (A3)
+  2 #P-CHARGE-SCHEDULE-CODE (A3)
+  2 #P-STATEMENT-CYCLE     (A2)
+  2 #P-BRANCH-CODE         (A4)
+  2 #P-RELATIONSHIP-MGR-ID (A8)
+  2 #P-LAST-TRANSACTION-DATE (A8)
+  2 #P-LAST-STATEMENT-DATE (A8)
+END-DEFINE

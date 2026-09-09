@@ -1,0 +1,79 @@
+* ============================================================
+* DDM NAME  : AMB-COREBKG-ACCOUNT
+* ADABAS    : FILE 100
+* PURPOSE   : Account master for AMBANK core banking operations
+* USED BY   : ACCTRD001 (Natural) - account read operations
+*            ACCTUP001 (Natural) - account update operations
+* RECORDS   : ~100,000 (demo data)
+* CHANGED   : 2024-09-08 Initial creation for impact analysis demo
+* ============================================================
+
+DB=100
+
+FIELD=AA, 12, A, DE         /* ACCOUNT-NUMBER
+                              /* Unique descriptor. Account identifier.
+                              /* Format: A followed by 11-digit number.
+
+FIELD=AB, 12, A, DE         /* CUSTOMER-ID
+                              /* Descriptor. -> FILE 200.
+                              /* Links account to customer.
+
+FIELD=AC, 8, A, DE          /* PRODUCT-CODE
+                              /* Product type: SAVINGS, CURRENT, LOAN, FD, RD
+
+FIELD=AD, 2, A, DE          /* ACCOUNT-TYPE
+                              /* Account type code: SA, CA, LA, FD, RD
+
+FIELD=AE, 3, A, DE          /* ACCOUNT-STATUS
+                              /* Account status: ACT, CLS, FRZ, DOR
+
+FIELD=AF, 8, A, DE          /* DATE-OPENED
+                              /* Account opening date in YYYYMMDD format.
+
+FIELD=AG, 8, A, DE          /* DATE-CLOSED
+                              /* Account closing date in YYYYMMDD format.
+
+FIELD=AH, 3, A, DE          /* CURRENCY-CODE
+                              /* Currency: USD, EUR, GBP, INR, JPY
+
+FIELD=AI, 15, P, DE         /* CURRENT-BALANCE
+                              /* Current account balance. Signed packed 15.2.
+
+FIELD=AJ, 15, P, DE         /* AVAILABLE-BALANCE
+                              /* Available balance for withdrawal. Packed 15.2.
+
+FIELD=AK, 15, P, DE         /* CLEARED-BALANCE
+                              /* Cleared balance. Packed 15.2.
+
+FIELD=AL, 15, P, DE         /* UNCLEARED-BALANCE
+                              /* Uncleared balance. Packed 15.2.
+
+FIELD=AM, 15, P, DE         /* OVERDRAFT-LIMIT
+                              /* Overdraft limit. Packed 15.2.
+
+FIELD=AN, 8, A, DE          /* OVERDRAFT-EXPIRY-DATE
+                              /* Overdraft expiry date in YYYYMMDD format.
+
+FIELD=AO, 15, P, DE         /* LIEN-AMOUNT
+                              /* Lien amount. Packed 15.2.
+
+FIELD=AP, 3, A, DE          /* INTEREST-RATE-CODE
+                              /* Interest rate code for the account.
+
+FIELD=AQ, 3, A, DE          /* CHARGE-SCHEDULE-CODE
+                              /* Charge schedule code.
+
+FIELD=AR, 2, A, DE          /* STATEMENT-CYCLE
+                              /* Statement cycle: MM, QQ, YY
+
+FIELD=AT, 4, A, DE          /* BRANCH-CODE
+                              /* Branch code where account is maintained.
+
+FIELD=AU, 8, A, DE          /* RELATIONSHIP-MGR-ID
+                              /* Relationship manager ID.
+
+FIELD=AV, 8, A, DE          /* LAST-TRANSACTION-DATE
+                              /* Last transaction date in YYYYMMDD format.
+
+FIELD=AW, 8, A, DE          /* LAST-STATEMENT-DATE
+                              /* Last statement date in YYYYMMDD format.
