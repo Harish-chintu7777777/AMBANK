@@ -14,7 +14,7 @@ curl --silent --show-error \
   --header "Content-Type: application/json" \
   --header "X-Source-System: AMBANK" \
   --header "X-Request-Id: WEB-$(date +%s)" \
-  --max-time 30 \
+  --max-time "${REQUEST_TIMEOUT} \
   --data "@${REQUEST_FILE}" \
   --output "${OUTPUT_FILE}" \
   "${URL}"
