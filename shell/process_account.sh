@@ -2,6 +2,7 @@
 set -euo pipefail
 
 BASE_URL="${AMBANK_BASE_URL:-https://mainframe.example.internal}"
+REQUEST_TIMEOUT="${AMBANK_TIMEOUT:-30}"
 ENDPOINT_PATH="/banking/account/update"
 REQUEST_FILE="${1:-../config/account_request.json}"
 OUTPUT_FILE="${2:-account_response.json}"
