@@ -10,7 +10,7 @@
 
 DB=100
 
-FIELD=AA, 12, A, DE         /* ACCOUNT-NUMBER
+FIELD=AA, 10, A, DE         /* ACCOUNT-NUMBER
                               /* Unique descriptor. Account identifier.
                               /* Format: A followed by 11-digit number.
 
