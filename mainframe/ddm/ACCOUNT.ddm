@@ -36,7 +36,7 @@ FIELD=AG, 8, A, DE          /* DATE-CLOSED
 FIELD=AH, 3, A, DE          /* CURRENCY-CODE
                               /* Currency: USD, EUR, GBP, INR, JPY
 
-FIELD=AI, 15, P, DE         /* CURRENT-BALANCE
+FIELD=AI, 18, P, DE         /* CURRENT-BALANCE
                               /* Current account balance. Signed packed 15.2.
 
 FIELD=AJ, 15, P, DE         /* AVAILABLE-BALANCE
