@@ -57,7 +57,7 @@ FIELD=AN, 8, A, DE          /* OVERDRAFT-EXPIRY-DATE
 FIELD=AO, 15, P, DE         /* LIEN-AMOUNT
                               /* Lien amount. Packed 15.2.
 
-FIELD=AP, 3, A, DE          /* INTEREST-RATE-CODE
+FIELD=AP, 13, A, DE          /* INTEREST-RATE-CODE
                               /* Interest rate code for the account.
 
 FIELD=AQ, 3, A, DE          /* CHARGE-SCHEDULE-CODE
